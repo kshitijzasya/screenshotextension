@@ -1,3 +1,7 @@
+body {
+  height: 400px;
+  width: 400px;
+}
 .App {
   text-align: center;
 }
