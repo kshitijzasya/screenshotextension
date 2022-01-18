@@ -18,13 +18,15 @@
     "tabs",
     "activeTab",
     "desktopCapture",
+    "downloads",
     "http://*/*", 
     "https://*/*"
   ],
   "background": {
     "scripts": [
       "background.js"
-    ]
+    ],
+    "persistent": false
   },
   "options_page": "./options.html",
   "browser_action": {
