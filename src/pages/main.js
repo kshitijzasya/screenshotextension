@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { screenCapture } from "../util/capture";
 
@@ -9,6 +9,17 @@ function captureArea() {
 
 //main screen area
 const Main = () => {
+    useEffect(() => {
+        window.chrome.runtime.onMessage.addListener((message, sender, response) => {
+            console.log('message',message)
+        })
+    }, []);
+
+    useEffect(() => {
+        // window.chrome.runtime.sendMessage({name: 'stream', streamid: '343'}, (response) => {
+        //     console.log('response',response)
+        // })
+    },[])
     return (
         <>
             <div className="container md:container mx-auto px-15 py-5">

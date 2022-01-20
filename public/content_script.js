@@ -1,6 +1,6 @@
 /*global chrome*/
-chrome.runtime.onMessage.addListener((message, sender, senderResponse) => {
-    if(message.name === 'stream' && message.streamId) {
+chrome.runtime.onMessage.addListener((message, sender, senderResponse) => { console.log('message', message)
+    if(message.name === 'stream' && message.streamId) { 
         let track, canvas
         navigator.mediaDevices.getUserMedia({
             video: {
@@ -60,4 +60,10 @@ chrome.runtime.onMessage.addListener((message, sender, senderResponse) => {
 
         return true
     }
+});
+
+//send message to from end
+chrome.runtime.sendMessage({
+    name: 'front-test',
+    data: []
 })
