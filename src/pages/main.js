@@ -8,7 +8,7 @@ function captureArea() {
 }
 
 //main screen area
-const Main = () => {
+const Main = () => { 
     useEffect(() => {
         window.chrome.runtime.onMessage.addListener((message, sender, response) => {
             console.log('message',message)
@@ -16,9 +16,9 @@ const Main = () => {
     }, []);
 
     useEffect(() => {
-        // window.chrome.runtime.sendMessage({name: 'stream', streamid: '343'}, (response) => {
-        //     console.log('response',response)
-        // })
+        window.chrome.runtime.sendMessage({name: 'stream', streamid: '343'}, (response) => {
+            console.log('response',response)
+        })
     },[])
     return (
         <>
