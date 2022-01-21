@@ -18,6 +18,12 @@
     "http://*/*", 
     "https://*/*"
   ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js" : ["content.js"]
+    }
+  ],
   "background": {
     "scripts": [
       "background.js"
@@ -32,11 +38,5 @@
       "128": "logo512.png" 
     }
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
