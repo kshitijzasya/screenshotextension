@@ -10,6 +10,9 @@
 //         }
 //     })
 // })
-chrome.runtime.onMessage.addListener((message, sender, senderResponse) => {
-    console.log('meesage back', message)
-})
+
+(function() {
+    setTimeout(() => {
+        console.log('insinde timeout')
+    }, 2000)
+}())
